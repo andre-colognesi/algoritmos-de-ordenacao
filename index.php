@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Bubble sort</title>
 </head>
 <body>
 
@@ -33,13 +33,14 @@ $array2 = $bubble->getArray();
         }
     </style>
     <div style="height:800px; width:1000px;">
-    <table  style="height:800px; width:1000px; align:bottom">
+    <h1>Array </h1>
+    <table  style="height:100%; width:100%; align:bottom">
     <tr>
     <?php 
         foreach($array2 as $a){
             ?>
             <td class="vertical">
-                <div style="background-color: black; height:<?=$a?>%; width:100%; align:bottom"></div>
+                <div style="background-color: black; height:<?=$a * 3?>%; width:100%; align:bottom"></div>
             </td>
             <?php
         }
@@ -49,13 +50,13 @@ $array2 = $bubble->getArray();
     </div>
 
     <div style="height:800px; width:1000px;">
-    <table  style="height:800px; width:1000px; align:bottom">
+    <table  style="height:100%; width:100%; align:bottom">
     <tr>
     <?php 
         foreach($array as $a){
             ?>
             <td class="vertical">
-                <div style="background-color: blue; height:<?=$a?>%; width:100%; align:bottom"></div>
+                <div class="" style="background-color: blue; height:<?=$a * 3?>%; width:100%; align:bottom"></div>
             </td>
             <?php
         }
