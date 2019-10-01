@@ -7,7 +7,7 @@
 
     $i = 2;
     while($i <= $limit) {
-            $vl1 = (float)$arr[$i - 1];
+            $vl1 = (double)$arr[$i - 1];
             $vl2 = (double)$arr[$i - 2];
             array_push($arr,$vl1 + $vl2);
         $i++;
