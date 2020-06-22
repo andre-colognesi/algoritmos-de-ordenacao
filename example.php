@@ -16,7 +16,6 @@
             var col = document.getElementById("qtdcol").value;
             render(generateArray(col));
         }
-
         function bubbleSort(array){
             var aux;
             var swap;
@@ -38,7 +37,6 @@
             }while(swap)
             return array;
         }
-
         function sortOneByOne(array){
             var aux;
             var swap;
@@ -64,7 +62,6 @@
                 newArray[i] = document.getElementById(i).getAttribute("data-value");
             }
                 console.log('ok');
-
                 document.getElementById("sort").innerHTML = newArray.join(",");
                 if(!swap){
                     clearInterval(interval);
@@ -74,8 +71,6 @@
        
             
         }
-
-
         function generateArray(qtd){
             let i = 0;
             var arr = [];
@@ -86,26 +81,22 @@
             document.getElementById("mess").innerHTML = arr.join(",");
             return arr;
         }
-
         function show(){
             var row = document.getElementById("sortido");
             row.innerHTML = '';
             var array = generateArray();
             var sortedArray = bubbleSort(array);
             render(array,'baguncado','mess');
-
         }
-
         function stepByStep(){
             var arr = document.getElementsByClassName("col");
                     sortOneByOne(arr);
         }
-
         function render(array,id = "sortido",id2 = "sort"){
             var row = document.getElementById(id);
                 row.innerHTML = '';
             for(let i = 0; i < array.length; i++){
-            row.innerHTML += `<td class="vertical">
+            row.innerHTML += `<td class="vertical" style="max-width:1px">
                 <div style="background-color: blue; height:${array[i] * 1}%; width:100%; align:bottom" id="${i}" class="col" data-value="${array[i]}"></div>
             </td>`
             }
@@ -113,50 +104,57 @@
         }
     </script>
     <div class="container my-5 text-center">
-    <main style="align: center;">
-        <button onclick="stepByStep()" class="btn btn-info">Ordenar array</button>
-        <label>Qtd. de Colunas</label>
+
+        <div class="row">
+            <div class="col-sm-3 text-right"><br>
+        Qtd. de Colunas
+        </div>
+        <div class="col-sm-2"><br>
         <input type="text" class="form-control" value="100" id="qtdcol">
-        <button class="btn btn-primary" onclick="createArray()">Criar array</button>
-    </main>
+        </div>
+        <div class="col-sm-2"><br>
+        <button class="btn btn-primary btn-block" onclick="createArray()">Criar array</button>
     </div>
+    </div>
+            <div class="row">
+                <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+            <br>
+        <button onclick="stepByStep()" class="btn btn-info btn-block">Ordenar array</button>
+        
+        </div>
+        <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <div class="container">
     <div class="row">
     <h6>Array misturado </h6>
-    <div id="mess" class="col-sm-12 text-center">
+    <div id="mess" class="col-sm-12 text-center" style="word-wrap: break-word;">
     </div>
     <hr>
     <h6>Array arrumado</h6>
-    <div id="sort" class="col-sm-12 text-center">
+    <div id="sort" class="col-sm-12 text-center"  style="word-wrap: break-word;">
     </div>
     </div>
     </div>
-
+    </div>
     <style>
         .vertical{
             height: 100%;
             max-width: 2%;
             background-color: white;
             vertical-align: bottom;
-
         }
     </style>
-    <div style="height:500px; width:1000px; margin-top:25% container px-5 py-5 border rounded">
+    <div class="container mb-5 pb-5" style="overflow-x:scroll">
     <h1>Array </h1>
-    <table  style="height:100%; width:100%; align:bottom">
+    <div class="row">
+    <table  style="height:500px; width:100%; align:bottom;  border-collapse: separate;">
     <tr id="sortido">
-
     </tr>
     </table>
     </div>
-
-    <div style="height:800px; width:1000px;">
-    <table  style="height:100%; width:100%; align:bottom">
-    <tr id="baguncado">
-
-    </tr>
-    </table>
     </div>
-
   
 </body>
 </html>
